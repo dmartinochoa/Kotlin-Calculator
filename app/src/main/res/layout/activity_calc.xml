@@ -171,8 +171,8 @@
 
     <TextView
         android:id="@+id/txtValues"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="403dp"
+        android:layout_height="65dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
@@ -181,12 +181,9 @@
         android:background="#efefef"
         android:ems="10"
         android:gravity="right|center_vertical"
-        android:maxLength="12"
-        android:overScrollMode="ifContentScrolls"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHeader"
-        tools:ignore="RtlHardcoded" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

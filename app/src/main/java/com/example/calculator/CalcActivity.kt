@@ -17,7 +17,7 @@ class CalcActivity : AppCompatActivity() {
         val bundle = intent.extras
         val username = bundle?.getString("username")
         val txtHeader = findViewById<TextView>(R.id.txtHeader)
-        txtHeader.append(username)
+        txtHeader.append(" $username")
         val outputText = findViewById<TextView>(R.id.txtValues)
         outputText.text = "0"
 
