@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin?.setOnClickListener {
             val username = findViewById<EditText>(R.id.editTxtName).text.toString()
-            if (checkName(username)){
+            if (checkName(username)) {
                 val intent = Intent(this, CalcActivity::class.java)
                 intent.putExtra("username", username)
                 startActivity(intent)
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkName (username : String) : Boolean {
+    private fun checkName(username: String): Boolean {
         return username.isNotEmpty()
     }
 }

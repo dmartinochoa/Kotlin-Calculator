@@ -22,11 +22,10 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtValues"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/txtValues">
 
         <TableRow
             android:layout_width="match_parent"
@@ -34,37 +33,36 @@
             android:gravity="center">
 
             <Button
-                android:text="@string/seven"
+                android:id="@+id/btnSeven"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnSeven"/>
+                android:text="@string/seven" />
 
             <Button
-                android:text="@string/eight"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="numberClick"
                 android:id="@+id/btnEight"
-                />
-
-            <Button
-                android:text="@string/nine"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnNine"/>
+                android:text="@string/eight" />
 
             <Button
-                android:text="@string/divide"
+                android:id="@+id/btnNine"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="@string/nine" />
+
+            <Button
+                android:id="@+id/btnDivide"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="operationClick"
-                android:id="@+id/btnDivide"/>
+                android:text="@string/divide" />
         </TableRow>
 
         <TableRow
@@ -74,36 +72,36 @@
             android:gravity="center">
 
             <Button
-                android:text="@string/four"
+                android:id="@+id/btnFour"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnFour"/>
+                android:text="@string/four" />
 
             <Button
-                android:text="@string/five"
+                android:id="@+id/btnFive"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnFive"/>
+                android:text="@string/five" />
 
             <Button
-                android:text="@string/six"
+                android:id="@+id/btnSix"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnSix"/>
+                android:text="@string/six" />
 
             <Button
-                android:text="@string/multiply"
+                android:id="@+id/btnMultiply"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="operationClick"
-                android:id="@+id/btnMultiply"/>
+                android:text="@string/multiply" />
         </TableRow>
 
         <TableRow
@@ -113,36 +111,36 @@
             android:gravity="center">
 
             <Button
-                android:text="@string/one"
+                android:id="@+id/btnOne"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnOne"/>
+                android:text="@string/one" />
 
             <Button
-                android:text="@string/two"
+                android:id="@+id/btnTwo"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnTwo"/>
+                android:text="@string/two" />
 
             <Button
-                android:text="@string/three"
+                android:id="@+id/btnThree"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnThree"/>
+                android:text="@string/three" />
 
             <Button
-                android:text="@string/minus"
+                android:id="@+id/btnSubtract"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="operationClick"
-                android:id="@+id/btnSubtract"/>
+                android:text="@string/minus" />
         </TableRow>
 
         <TableRow
@@ -152,36 +150,36 @@
             android:gravity="center">
 
             <Button
-                android:text="@string/decimal"
+                android:id="@+id/btnDecimal"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="decimalClick"
-                android:id="@+id/btnDecimal"/>
+                android:text="@string/decimal" />
 
             <Button
-                android:text="@string/zero"
+                android:id="@+id/btnZero"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="numberClick"
-                android:id="@+id/btnZero"/>
+                android:text="@string/zero" />
 
             <Button
-                android:text="@string/clear"
+                android:id="@+id/btnClear"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="clearClick"
-                android:id="@+id/btnClear"/>
+                android:text="@string/clear" />
 
             <Button
-                android:text="@string/plus"
+                android:id="@+id/btnAdd"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="operationClick"
-                android:id="@+id/btnAdd"/>
+                android:text="@string/plus" />
         </TableRow>
 
         <TableRow
@@ -190,12 +188,12 @@
             android:layout_weight="1">
 
             <Button
-                android:text="@string/equals"
+                android:id="@+id/btnEqual"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:onClick="equalClick"
-                android:id="@+id/btnEqual"/>
+                android:text="@string/equals" />
         </TableRow>
     </TableLayout>
 
