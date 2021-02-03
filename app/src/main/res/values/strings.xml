@@ -28,4 +28,7 @@
     <string name="eight">8</string>
     <string name="seven">7</string>
     <string name="header">Welcome: </string>
+    <string name="calculator">Calculator</string>
+    <string name="login">Login</string>
+    <string name="name">Name:</string>
 </resources>

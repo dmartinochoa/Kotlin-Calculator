@@ -1,5 +1,6 @@
 package com.example.calculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -34,6 +35,7 @@ class CalcActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun decimalClick(v: View) {
         val currentOut = findViewById<TextView>(R.id.txtValues)
 
