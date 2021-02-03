@@ -2,15 +2,12 @@ package com.example.calculator
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        btnLogin?.setOnClickListener() {
-            var username = findViewById<EditText>(R.id.editTxtName).text.toString()
+        btnLogin?.setOnClickListener {
+            val username = findViewById<EditText>(R.id.editTxtName).text.toString()
             if (checkName(username)){
                 val intent = Intent(this, CalcActivity::class.java)
                 intent.putExtra("username", username)
@@ -48,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun checkName (username : String) : Boolean {
-        return username.length > 0
+    private fun checkName (username : String) : Boolean {
+        return username.isNotEmpty()
     }
 }

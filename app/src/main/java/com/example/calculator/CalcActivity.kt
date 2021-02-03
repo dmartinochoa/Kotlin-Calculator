@@ -1,13 +1,11 @@
 package com.example.calculator
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.log
 
 class CalcActivity : AppCompatActivity() {
 
@@ -16,38 +14,63 @@ class CalcActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calc)
 
         val bundle = intent.extras
-
-        val username = bundle?.getString("username");
+        val username = bundle?.getString("username")
         val txtHeader = findViewById<TextView>(R.id.txtHeader)
         txtHeader.append(username)
-        var outputText = findViewById<TextView>(R.id.txtValues)
-        outputText.setText("0")
+        val outputText = findViewById<TextView>(R.id.txtValues)
+        outputText.text = "0"
+
     }
 
     fun numberClick(v: View) {
-        var inputValue = (v as Button).text.trim().toString()
-        var currentOut = findViewById<TextView>(R.id.txtValues)
+        var inputValue = (v as Button).text.toString()
+        val currentOut = findViewById<TextView>(R.id.txtValues)
         //To replace the default number 0
         if (currentOut.text != "0") {
             inputValue = currentOut.text as String + inputValue
-            currentOut.setText(inputValue)
+            currentOut.text = inputValue
         } else {
-            currentOut.setText(inputValue)
+            currentOut.text = inputValue
         }
+    }
+
+    fun decimalClick(v: View) {
+        val currentOut = findViewById<TextView>(R.id.txtValues)
+
+        if ((validDecimal(currentOut.text as String))) {
+            if (currentOut.text.last().isDigit()) {
+                currentOut.text = currentOut.text as String + "."
+            } else if ((currentOut.text.last() == '+' || currentOut.text.last() == '-' || currentOut.text.last() == '/' || currentOut.text.last() == '*')) {
+                currentOut.text = currentOut.text as String + "0."
+            }
+        } else {
+            Toast.makeText(this, "Invalid Decimal", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun clearClick(v: View) {
+        val currentOut = findViewById<TextView>(R.id.txtValues)
+        currentOut.text = "0"
+        Toast.makeText(this, "Cleared", Toast.LENGTH_SHORT).show()
+    }
+
+    fun equalClick(v: View) {
+        val currentOut = findViewById<TextView>(R.id.txtValues)
+        currentOut.text = operate(currentOut.text as String)
     }
 
     fun operationClick(v: View) {
         var inputValue = (v as Button).text.trim().toString()
-        var currentOut = findViewById<TextView>(R.id.txtValues)
-        var tete = currentOut.text.last()
+        val currentOut = findViewById<TextView>(R.id.txtValues)
+
         //To replace any operator before adding another
         if (currentOut.text.last() == '+' || currentOut.text.last() == '-' || currentOut.text.last() == '/' || currentOut.text.last() == '*') {
             inputValue =
-                currentOut.text.substring(0, currentOut.text.length - 1) as String + inputValue
-            currentOut.setText(inputValue)
+                currentOut.text.substring(0, currentOut.text.length - 1) + inputValue
+            currentOut.text = inputValue
         } else {
             inputValue = currentOut.text as String + inputValue
-            currentOut.setText(inputValue)
+            currentOut.text = inputValue
         }
 
         //To complete previous operation before adding a new one
@@ -61,32 +84,61 @@ class CalcActivity : AppCompatActivity() {
         }
     }
 
-    fun operate(inputValue: String): String {
-        var inputs = inputValue.split("-", "+", "/", "*")
-        var operatorValue: Char
-        operatorValue = inputValue.toCharArray()[inputs[0].length].toChar()
-        Log.d("array", inputs.toString())
-        var outputValue = 0.0
-        Log.d("arasdaray", operatorValue.toString())
+    private fun operate(inputValue: String): String {
+        val inputs = inputValue.split("-", "+", "/", "*")
+        try {
 
-        when (operatorValue) {
-            '+' -> {
-                outputValue = inputs[0].toDouble() + inputs[1].toDouble()
+            val operatorValue: Char = inputValue.toCharArray()[inputs[0].length]
+            var outputValue = 0.0
+
+            when (operatorValue) {
+                '+' -> {
+                    outputValue = inputs[0].toDouble() + inputs[1].toDouble()
+                }
+                '-' -> {
+                    outputValue = inputs[0].toDouble() - inputs[1].toDouble()
+                }
+                '/' -> {
+                    outputValue = inputs[0].toDouble() / inputs[1].toDouble()
+                }
+                '*' -> {
+                    outputValue = inputs[0].toDouble() * inputs[1].toDouble()
+                }
             }
-            '-' -> {
-                Log.d("resdfsdfsult", "negatve")
-                outputValue = inputs[0].toDouble() - inputs[1].toDouble()
-            }
-            '/' -> {
-                outputValue = inputs[0].toDouble() / inputs[1].toDouble()
-            }
-            '*' -> {
-                outputValue = inputs[0].toDouble() * inputs[1].toDouble()
-            }
+            return outputValue.toBigDecimal().toString()
+        } catch (ex: Exception) {
+            Toast.makeText(this, "Operation Error", Toast.LENGTH_SHORT).show()
+            return inputValue
         }
-        Log.d("result", outputValue.toString())
-
-        return outputValue.toString()
     }
+
+    private fun validDecimal(currentOut: String): Boolean {
+        var valid = true
+        val outArray = currentOut.split("-", "+", "/", "*")
+        for (value in outArray) {
+            valid = !value.contains(".")
+        }
+        return valid
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
