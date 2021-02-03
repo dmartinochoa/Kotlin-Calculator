@@ -62,7 +62,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="operationClick"
-                android:text="@string/divide" />
+                android:text="@string/divide"
+                android:backgroundTint="@color/operators"
+                />
         </TableRow>
 
         <TableRow
@@ -101,7 +103,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="operationClick"
-                android:text="@string/multiply" />
+                android:text="@string/multiply"
+                android:backgroundTint="@color/operators"
+                />
         </TableRow>
 
         <TableRow
@@ -140,7 +144,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="operationClick"
-                android:text="@string/minus" />
+                android:text="@string/minus"
+                android:backgroundTint="@color/operators"
+                />
         </TableRow>
 
         <TableRow
@@ -155,7 +161,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="decimalClick"
-                android:text="@string/decimal" />
+                android:text="@string/decimal"
+                />
 
             <Button
                 android:id="@+id/btnZero"
@@ -171,7 +178,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="clearClick"
-                android:text="@string/clear" />
+                android:text="@string/clear"
+                android:backgroundTint="@color/colorAccent"
+                />
 
             <Button
                 android:id="@+id/btnAdd"
@@ -179,7 +188,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="operationClick"
-                android:text="@string/plus" />
+                android:text="@string/plus"
+                android:backgroundTint="@color/operators"
+                />
         </TableRow>
 
         <TableRow
@@ -193,7 +204,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="equalClick"
-                android:text="@string/equals" />
+                android:text="@string/equals"
+                android:backgroundTint="@color/colorPrimary"
+                />
         </TableRow>
     </TableLayout>
 
