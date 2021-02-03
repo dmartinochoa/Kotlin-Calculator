@@ -19,6 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txtCalc"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtHeader"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -184,6 +195,6 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCalc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

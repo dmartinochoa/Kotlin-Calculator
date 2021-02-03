@@ -107,6 +107,10 @@ class CalcActivity : AppCompatActivity() {
                     outputValue = inputs[0].toDouble() * inputs[1].toDouble()
                 }
             }
+            val header = findViewById<TextView>(R.id.txtCalc)
+            header.text = inputValue
+            header.append("=$outputValue")
+
             return outputValue.toBigDecimal().toString()
         } catch (ex: Exception) {
             Toast.makeText(this, "Operation Error", Toast.LENGTH_SHORT).show()
